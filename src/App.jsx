@@ -30,7 +30,7 @@ import Page404 from "./components/Error/Page404";
 import Page403 from "./components/Error/Page403";
 import persondevice from "./components/staff/persondevice/persondevice";
 import feedback from "./components/staff/feedback/feedback";
-import feedbackmanagement from "./components/FeedBackManagement/feedBackManagement";
+import FeedBackManagement from "./components/FeedBackManagement/FeedBackManagement";
 
 const PrivateRoute = ({ element: Component, ...rest }) => {
   const token = getToken();
@@ -177,7 +177,7 @@ function App() {
             />
             <Route
               path="/feedbackmanagement"
-              element={<PrivateRoute element={feedbackmanagement} />}
+              element={<PrivateRoute element={FeedBackManagement} />}
             />
           </Route>
           <Route path="*" element={<Page404 />} />
