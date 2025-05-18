@@ -83,7 +83,7 @@ const Statiscis = () => {
   useEffect(() => {
     const fetchDevices = async () => {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/devices/by-notes",
+        "https://qlvtapi-production.up.railway.app/api/v1/devices/by-notes",
         {
           headers: {
             Authorization: `Bearer ${getToken()}`,

@@ -25,7 +25,7 @@ function UserMenu({ handleSelect }) {
   const handleLogout = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v1/auth/logout",
+        "https://qlvtapi-production.up.railway.app/api/v1/auth/logout",
         {
           token: getToken(),
         },
@@ -77,7 +77,7 @@ function UserMenu({ handleSelect }) {
     const fetchUserInfo = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/v1/user/myInfo",
+          "https://qlvtapi-production.up.railway.app/api/v1/user/myInfo",
           {
             headers: {
               Authorization: `Bearer ${getToken()}`,

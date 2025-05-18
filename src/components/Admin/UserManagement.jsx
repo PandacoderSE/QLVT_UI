@@ -64,7 +64,7 @@ const UserrManagement = () => {
   const fetchUsers = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/user/getAll",
+        "https://qlvtapi-production.up.railway.app/api/v1/user/getAll",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -88,7 +88,7 @@ const UserrManagement = () => {
     } else {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/v1/user/getUser/${searchTerm}`,
+          `https://qlvtapi-production.up.railway.app/api/v1/user/getUser/${searchTerm}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -139,7 +139,7 @@ const UserrManagement = () => {
         .then(async (result) => {
           if (result.isConfirmed) {
             await axios.delete(
-              `http://localhost:8080/api/v1/user/deleteUsers/${ids}`,
+              `https://qlvtapi-production.up.railway.app/api/v1/user/deleteUsers/${ids}`,
               {
                 headers: {
                   Authorization: `Bearer ${token}`,
@@ -275,7 +275,7 @@ const UserrManagement = () => {
     console.log("id user: " + id);
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/v1/user/getUser/${id}`,
+        `https://qlvtapi-production.up.railway.app/api/v1/user/getUser/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -312,7 +312,7 @@ const UserrManagement = () => {
     try {
       console.log(userInfo);
       const response = await axios.put(
-        `http://localhost:8080/api/v1/user/updateUser/${id}`,
+        `https://qlvtapi-production.up.railway.app/api/v1/user/updateUser/${id}`,
         userInfo,
         {
           headers: {

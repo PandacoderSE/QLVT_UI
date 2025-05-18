@@ -118,7 +118,7 @@ function Profile() {
                 phone: profileData.phone || userInfo.phone
             };
 
-            const response = await axios.put("http://localhost:8080/api/v1/user/updateProfile", updatedProfileData, {
+            const response = await axios.put("https://qlvtapi-production.up.railway.app/api/v1/user/updateProfile", updatedProfileData, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -155,7 +155,7 @@ function Profile() {
                 return;
             }
 
-            const response = await axios.put("http://localhost:8080/api/v1/user/updatePassword", {
+            const response = await axios.put("https://qlvtapi-production.up.railway.app/api/v1/user/updatePassword", {
                 oldPassword,
                 newPassword
             }, {
@@ -185,7 +185,7 @@ function Profile() {
                     return;
                 }
 
-                const response = await axios.get("http://localhost:8080/api/v1/user/myInfo", {
+                const response = await axios.get("https://qlvtapi-production.up.railway.app/api/v1/user/myInfo", {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }

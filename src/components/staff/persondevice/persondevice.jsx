@@ -26,7 +26,7 @@ const Persondevice = () => {
       if (serialNumber) params.serialNumber = serialNumber.trim();
 
       const response = await axios.get(
-        "http://localhost:8080/api/v1/devices/assignments",
+        "https://qlvtapi-production.up.railway.app/api/v1/devices/assignments",
         {
           params,
           headers: {
@@ -50,7 +50,7 @@ const Persondevice = () => {
   const checkUserSignature = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/devices/signature",
+        "https://qlvtapi-production.up.railway.app/api/v1/devices/signature",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -102,7 +102,7 @@ const Persondevice = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v1/devices/approve-assignment",
+        "https://qlvtapi-production.up.railway.app/api/v1/devices/approve-assignment",
         selectedDevices,
         {
           headers: {
@@ -170,7 +170,7 @@ const Persondevice = () => {
       }
 
       const response = await axios.post(
-        `http://localhost:8080/api/v1/devices/sign-staff/${assignmentId}`,
+        `https://qlvtapi-production.up.railway.app/api/v1/devices/sign-staff/${assignmentId}`,
         formData,
         {
           headers: {
@@ -209,7 +209,7 @@ const Persondevice = () => {
   const handleReject = async (assignmentId) => {
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/v1/devices/assignments/reject?assignmentId=${assignmentId}`,
+        `https://qlvtapi-production.up.railway.app/api/v1/devices/assignments/reject?assignmentId=${assignmentId}`,
         {},
         {
           headers: {
@@ -238,7 +238,7 @@ const Persondevice = () => {
   const handleReturn = async (assignmentId) => {
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/v1/devices/assignments/return?assignmentId=${assignmentId}`,
+        `https://qlvtapi-production.up.railway.app/api/v1/devices/assignments/return?assignmentId=${assignmentId}`,
         {},
         {
           headers: {
@@ -267,7 +267,7 @@ const Persondevice = () => {
   const handlePdfAction = async (assignmentId, action = "download") => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/v1/devices/${assignmentId}/download-pdf`,
+        `https://qlvtapi-production.up.railway.app/api/v1/devices/${assignmentId}/download-pdf`,
         {
           responseType: "blob",
           headers: {

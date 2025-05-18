@@ -50,7 +50,7 @@ const NotificationManagement = () => {
   const fetchNotis = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/notifications/getAll",
+        "https://qlvtapi-production.up.railway.app/api/v1/notifications/getAll",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -97,7 +97,7 @@ const NotificationManagement = () => {
     }
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/notifications/getNotiDate",
+        "https://qlvtapi-production.up.railway.app/api/v1/notifications/getNotiDate",
         {
           params: {
             fromDate: searchStartDate,
@@ -149,7 +149,7 @@ const NotificationManagement = () => {
   const handleDelete = async () => {
     try {
       await axios.delete(
-        `http://localhost:8080/api/v1/notifications/deleteNoti/${selectedNotifications.join(
+        `https://qlvtapi-production.up.railway.app/api/v1/notifications/deleteNoti/${selectedNotifications.join(
           ","
         )}`,
         {
@@ -240,7 +240,7 @@ const NotificationManagement = () => {
     }
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v1/notifications",
+        "https://qlvtapi-production.up.railway.app/api/v1/notifications",
         newNotification,
         {
           headers: {

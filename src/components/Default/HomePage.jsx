@@ -31,7 +31,7 @@ const HomePage = () => {
   const fetchNotis = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/notifications/getAll",
+        "https://qlvtapi-production.up.railway.app/api/v1/notifications/getAll",
         {
           headers: {
             Authorization: `Bearer ${getToken()}`,

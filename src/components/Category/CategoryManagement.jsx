@@ -130,7 +130,7 @@ const CategoryManagement = () => {
   const fetchCategories = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/categories/all",
+        "https://qlvtapi-production.up.railway.app/api/v1/categories/all",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -157,7 +157,7 @@ const CategoryManagement = () => {
         setDescriptionError(descriptionValidation);
         if (!nameValidation && !descriptionValidation) {
           const response = await axios.post(
-            "http://localhost:8080/api/v1/categories/add-new-category",
+            "https://qlvtapi-production.up.railway.app/api/v1/categories/add-new-category",
             { name, description },
             {
               headers: {
@@ -197,7 +197,7 @@ const CategoryManagement = () => {
     try {
       await Promise.all(
         selectedCategories.map((id) =>
-          axios.delete(`http://localhost:8080/api/v1/categories/${id}`, {
+          axios.delete(`https://qlvtapi-production.up.railway.app/api/v1/categories/${id}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -224,7 +224,7 @@ const CategoryManagement = () => {
     } else {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/v1/categories/search/${searchTerm}`,
+          `https://qlvtapi-production.up.railway.app/api/v1/categories/search/${searchTerm}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -247,7 +247,7 @@ const CategoryManagement = () => {
   const handleEditClick = async (categoryId) => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/v1/categories/update/${categoryId}`,
+        `https://qlvtapi-production.up.railway.app/api/v1/categories/update/${categoryId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -284,7 +284,7 @@ const CategoryManagement = () => {
     try {
     
         const response = await axios.put(
-          `http://localhost:8080/api/v1/categories/edit`,
+          `https://qlvtapi-production.up.railway.app/api/v1/categories/edit`,
           updatedProfileData,
           {
             headers: {

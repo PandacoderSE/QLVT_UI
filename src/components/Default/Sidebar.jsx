@@ -68,7 +68,7 @@ function Sidebar({
   const fetchRoles = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/user/getRoleByUser",
+        "https://qlvtapi-production.up.railway.app/api/v1/user/getRoleByUser",
         {
           headers: {
             Authorization: `Bearer ${token}`,

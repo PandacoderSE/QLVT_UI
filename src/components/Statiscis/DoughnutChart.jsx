@@ -56,7 +56,7 @@ const DoughnutChart = () => {
   };
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/v1/devices/all", {
+      .get("https://qlvtapi-production.up.railway.app/api/v1/devices/all", {
         headers: {
           Authorization: `Bearer ${getToken()}`,
         },

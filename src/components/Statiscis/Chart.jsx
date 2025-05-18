@@ -32,7 +32,7 @@ const Chart = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/v1/devices/device-counts", {
+      .get("https://qlvtapi-production.up.railway.app/api/v1/devices/device-counts", {
         headers: {
           Authorization: `Bearer ${getToken()}`,
         },

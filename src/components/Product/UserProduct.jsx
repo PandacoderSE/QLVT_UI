@@ -44,7 +44,7 @@ const UserProduct = () => {
   const checkUserSignature = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/devices/signature",
+        "https://qlvtapi-production.up.railway.app/api/v1/devices/signature",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -97,7 +97,7 @@ const UserProduct = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/v1/devices/by-status/${status}`,
+        `https://qlvtapi-production.up.railway.app/api/v1/devices/by-status/${status}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -116,7 +116,7 @@ const UserProduct = () => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/v1/categories/all",
+          "https://qlvtapi-production.up.railway.app/api/v1/categories/all",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -147,7 +147,7 @@ const UserProduct = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/v1/user/getUserDevice/${username}`,
+        `https://qlvtapi-production.up.railway.app/api/v1/user/getUserDevice/${username}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -176,7 +176,7 @@ const UserProduct = () => {
       const assignments = await Promise.all(
         selectedDevices.map(async (id) => {
           const response = await axios.post(
-            `http://localhost:8080/api/v1/devices/set-device`,
+            `https://qlvtapi-production.up.railway.app/api/v1/devices/set-device`,
             {
               serial_number: id,
               owner_id: username,
@@ -221,7 +221,7 @@ const UserProduct = () => {
           await Promise.all(
             selectedDevices.map((id) =>
               axios.post(
-                `http://localhost:8080/api/v1/devices/transfer-empty-status/${id}`,
+                `https://qlvtapi-production.up.railway.app/api/v1/devices/transfer-empty-status/${id}`,
                 {},
                 {
                   headers: { Authorization: `Bearer ${token}` },
@@ -263,7 +263,7 @@ const UserProduct = () => {
 
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/v1/devices/search-device?${query.toString()}`,
+        `https://qlvtapi-production.up.railway.app/api/v1/devices/search-device?${query.toString()}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -289,7 +289,7 @@ const UserProduct = () => {
     try {
       if (useExisting) {
         const response = await axios.post(
-          `http://localhost:8080/api/v1/devices/sign/${assignmentId}`,
+          `https://qlvtapi-production.up.railway.app/api/v1/devices/sign/${assignmentId}`,
           {},
           {
             headers: {
@@ -325,7 +325,7 @@ const UserProduct = () => {
         formData.append("signature", blob, "signature.png");
 
         const apiResponse = await axios.post(
-          `http://localhost:8080/api/v1/devices/sign/${assignmentId}`,
+          `https://qlvtapi-production.up.railway.app/api/v1/devices/sign/${assignmentId}`,
           formData,
           {
             headers: {
@@ -369,7 +369,7 @@ const UserProduct = () => {
   const fetchAssignments = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/devices/assignments",
+        "https://qlvtapi-production.up.railway.app/api/v1/devices/assignments",
         {
           params: { status: "PENDING" },
           headers: { Authorization: `Bearer ${token}` },
@@ -385,7 +385,7 @@ const UserProduct = () => {
   const viewPdf = async (assignmentId) => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/v1/devices/${assignmentId}/download-pdf`,
+        `https://qlvtapi-production.up.railway.app/api/v1/devices/${assignmentId}/download-pdf`,
         {
           responseType: "blob",
           headers: { Authorization: `Bearer ${token}` },
