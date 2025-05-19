@@ -14,6 +14,7 @@ import CreateDevice from "./CreateDevice";
 import CustomAlert from "../../Alert/CustomAlert.tsx";
 import api from "../../Services/api";
 import AlertInfo from "../../Alert/AlertInfo";
+import excelPNG from '../../../assets/img/excel.png'; 
 import {
   MdAddCircle,
   MdDelete,
@@ -464,7 +465,7 @@ const SearchDevice = () => {
                     <>
                       <MdUpload size={24} />
                       <img
-                        src="./src/assets/img/excel.png"
+                        src={excelPNG}
                         alt="Icon excel"
                         className="w-6"
                       />
@@ -478,7 +479,7 @@ const SearchDevice = () => {
                 >
                   <MdDownload size={24} />
                   <img
-                    src="./src/assets/img/excel.png"
+                    src={excelPNG}
                     alt="Icon excel"
                     className="w-6"
                   />
