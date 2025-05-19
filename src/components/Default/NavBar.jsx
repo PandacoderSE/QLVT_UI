@@ -5,7 +5,8 @@ import { useTranslation } from "react-i18next";
 import i18n from "../../i18n/i18n";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-
+import japanFlag from '../../assets/img/japan.png';
+import vietnamFlag from '../../assets/img/vietnam.png';
 const NavBar = ({ handleSelect }) => {
   const navigate = useNavigate();
   const [weather, setWeather] = useState(null);
@@ -98,7 +99,7 @@ const NavBar = ({ handleSelect }) => {
             <li className="flex items-center">
           <div className="inline-flex items-center gap-2">
             <label htmlFor="switch-component-on" className="text-slate-600 text-sm cursor-pointer" onClick={toggleLanguage}>
-              <img src={isJapanese ? "./src/assets/img/japan.png" : "./src/assets/img/vietnam.png"} alt={isJapanese ? "Cờ Nhật Bản" : "Cờ Việt Nam"} className="w-10" />
+             <img src={isJapanese ? japanFlag : vietnamFlag} alt={isJapanese ? "Cờ Nhật Bản" : "Cờ Việt Nam"} className="w-10" />
             </label>
           </div>
         </li>

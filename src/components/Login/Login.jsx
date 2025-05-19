@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { setToken } from "../Services/localStorageService";
 import jwtDecode from "jwt-decode";
-
+import backgroundImage from '../../assets/img/background3.png';
 function Login() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
@@ -159,7 +159,7 @@ function Login() {
         {/* Right: Image Section */}
         <div className="hidden md:block w-1/2 relative">
           <img
-            src="./src/assets/img/background3.png"
+            src={backgroundImage}
             alt="Login background"
             className="w-full h-full object-cover"
           />
